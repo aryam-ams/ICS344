@@ -23,6 +23,7 @@
    ![image](https://github.com/user-attachments/assets/09971e66-7257-4d6b-92db-04d6475f058a)
 
 4. Ran the exploit.
+
    ![image](https://github.com/user-attachments/assets/b8f8be1e-904f-46bf-ba52-20db932c5565)
 
 
