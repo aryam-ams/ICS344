@@ -14,7 +14,7 @@ sudo iptables -L
 Findings:
 - SSH connections were allowed from anywhere without restrictions.
 
-Tested attack → attacker successfully connected.
+- Tested attack → attacker successfully connected.
 
 ---
 
