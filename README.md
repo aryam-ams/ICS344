@@ -37,9 +37,6 @@ Each phase will be documented with screenshots and proof of work inside a dedica
 - `/phase2` → SIEM integration + log visualization + screenshots
 - `/phase3` → Defense implementation + before/after comparison + screenshots
 
-Each folder may contain additional subfolders for scripts, configs, or documentation as needed.
-
-A presentation will summarize findings from all phases.
 
 ---
 
