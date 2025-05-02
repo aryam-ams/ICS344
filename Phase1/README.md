@@ -14,9 +14,17 @@
 
 **Steps:**
 1. Launched Metasploit.
+   ![image](https://github.com/user-attachments/assets/0999886e-b5fd-42f2-b0ff-8038e7f52837)
+
 2. Used the `ssh_login` scanner module.
+   ![image](https://github.com/user-attachments/assets/76c344e4-3d93-4238-a44e-7ef86b5d34dc)
+
 3. Configured parameters (IP, credentials).
+   ![image](https://github.com/user-attachments/assets/09971e66-7257-4d6b-92db-04d6475f058a)
+
 4. Ran the exploit.
+   ![image](https://github.com/user-attachments/assets/b8f8be1e-904f-46bf-ba52-20db932c5565)
+
 
 **Outcome:**
 Metasploit successfully logged into SSH using `vagrant:vagrant`.
@@ -50,7 +58,15 @@ This task showed how weak/default credentials (`vagrant:vagrant`) allowed SSH ac
 
 **Steps:**
 1. Created a Bash script to automate SSH login attempts.
+
+![image](https://github.com/user-attachments/assets/7a4b7279-f8d8-4d42-9576-1a831d9057fc)
+
 2. Executed the script against the target.
+   ![image](https://github.com/user-attachments/assets/608a6130-a896-4d6f-ae85-4f90b6e5a080)
+   ![image](https://github.com/user-attachments/assets/6a716b07-5632-4ee4-bd9e-7f7db3fa245f)
+
+
+
 
 **Outcome:**
 The script found valid credentials `vagrant:vagrant` and confirmed access by running `whoami`.
