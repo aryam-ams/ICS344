@@ -59,11 +59,15 @@ This task showed how weak/default credentials (`vagrant:vagrant`) allowed SSH ac
 
 **Steps:**
 1. Created a Bash script to automate SSH login attempts.
+   
 
 ![image](https://github.com/user-attachments/assets/7a4b7279-f8d8-4d42-9576-1a831d9057fc)
 
 2. Executed the script against the target.
+
+   
    ![image](https://github.com/user-attachments/assets/608a6130-a896-4d6f-ae85-4f90b6e5a080)
+   
    ![image](https://github.com/user-attachments/assets/6a716b07-5632-4ee4-bd9e-7f7db3fa245f)
 
 
