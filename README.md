@@ -25,7 +25,7 @@ The ICS344 course project involves setting up and attacking a vulnerable service
 | Phase 1: Setup and Compromise the Service     | Aryam             |
 | Phase 2: Visual Analysis with a SIEM Dashboard| Lamyaa             |
 | Phase 3: Defensive Strategy Proposal          | All           |
-| Final Write-up & GitHub Repository            | Lamyaa               |
+| Final Write-up & GitHub Repository            | All               |
 
 ---
 
