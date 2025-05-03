@@ -21,7 +21,7 @@
    
    ![image](https://github.com/user-attachments/assets/76c344e4-3d93-4238-a44e-7ef86b5d34dc)
 
-4. Configured parameters (IP, credentials).
+4. Configured the Required Parameters.
    
    ![image](https://github.com/user-attachments/assets/092bf293-432a-468d-a572-dd31f397a0c0)
 
@@ -39,12 +39,12 @@
 
   ![image](https://github.com/user-attachments/assets/4d28bbb6-a222-4c4a-8176-d437d95bde9c)
 
-*** Metasploit's scanner/ssh/ssh_login module works asynchronously and non-sequentially:
+Metasploit's scanner/ssh/ssh_login module works asynchronously and non-sequentially:
  It tries multiple username/password combinations at the same time (parallel requests).
 As soon as it finds a valid credential, it reports success immediately (even if other attempts are still running).
 It does not wait for all failures to print before showing success. Instead, it prints results in the order responses arrive.
  The login attempt for vagrant:vagrant simply completed faster than the others — that’s why success showed up first in output.
-Meanwhile, the failed attempts were either queued earlier but responded later. *** 
+Meanwhile, the failed attempts were either queued earlier but responded later. 
 
 
 **Outcome:**
