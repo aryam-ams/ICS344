@@ -1,121 +1,98 @@
-Great, I see what the issue is. Your `README.md` is currently being **rendered as a code block**, which happens when you wrap the entire content in triple backticks (` ``` `). This makes it look like one big chunk of code instead of a properly formatted Markdown document.
 
----
-
-### ✅ Fix: Remove the Backticks Around the Whole Document
-
-**Incorrect:**
-```markdown
-```markdown
-# Header
-## Subheader
-- List
-```
-```
-
-**Correct:**
-```markdown
-# Header
-## Subheader
-- List
-```
-
----
-
-### ✅ Here's the Properly Rendered Version Without Code Block Wrapping
-
-You can copy and paste this directly into your `README.md` file:
-
-```markdown
 # Phase 2: Visual Analysis with a SIEM Dashboard
 
 ## Task: Detecting and Visualizing SSH Brute-force Attacks via Splunk
 
 ---
 
-### Environment Setup
+### Targeted Scenario:
 
-- **Attacker VM**: Kali Linux  
-- **Target VM**: Metasploitable3  
-- **SIEM Tool**: Splunk Enterprise  
-
----
-
-### Tools Used
-
-- **Splunk Enterprise (SIEM)**
-- **Splunk Forwarder**
-- **/var/log/auth.log** (log file)
-- **SSH brute-force simulation**
+- **Objective**: Detect SSH brute-force attacks
+- **Log Source**: `/var/log/auth.log` on Metasploitable3
+- **SIEM Tool**: Splunk Enterprise
+- **Attacker Machine**: Kali Linux
 
 ---
 
-### Steps
+### Tools Used:
 
-#### 1. Install Splunk Enterprise on Kali (Attacker VM)
-- Access the Splunk Web UI:  
-  `http://<SIEM_IP>:8000`  
-- Login as `admin`.
-
-#### 2. Enable Receiving on Port 9997 in Splunk
-
-#### 3. Install Splunk Forwarder on Metasploitable3
-
-#### 4. Connect the Forwarder to Splunk Server
-
-```bash
-sudo /opt/splunkforwarder/bin/splunk list forward-server
-```
-
-#### 5. Monitor the SSH Log File
-
-```bash
-sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log
-```
-
-#### 6. Simulate SSH Brute-force Attack
-
-#### 7. View Logs in Splunk
-
-- Go to: `http://localhost:8000`
-- Navigate:  
-  `Search & Reporting > Data Summary > Hosts > metasploitable3 > /var/log/auth.log`
-
-##### Search Queries
-
-```spl
-index=* source="/var/log/auth.log" "Failed password"
-```
-
-```spl
-index=* source="/var/log/auth.log" "Accepted password"
-```
+- **Splunk Enterprise** (Kali Linux)
+- **Splunk Forwarder** (Metasploitable3)
+- **SSH Brute-force Simulation**
+- **Splunk Search Queries**
 
 ---
 
-### Visualization and Analysis
+### Steps:
 
-- Created bar charts to visualize SSH login attempts.
-- Identified brute-force behavior clearly via Splunk.
+1. **Installed Splunk Enterprise** on Kali Linux  
+   ![image](https://github.com/user-attachments/assets/bd429e25-9ece-445e-9054-b15f3c1e240e)
+
+
+2. **Enabled receiving on port 9997 in Splunk**  
+   ![image](https://github.com/user-attachments/assets/a079342d-3f21-43c4-872a-083df4ed907b)
+
+
+3. **Installed Splunk Forwarder on Metasploitable3**  
+   ![image](https://github.com/user-attachments/assets/7b51f0c0-ba23-4c81-88b8-d2e3f851a8d5)
+
+
+4. **Connected the Forwarder to the Splunk Server**  
+   ```bash
+   sudo /opt/splunkforwarder/bin/splunk add forward-server 192.168.8.170:9997
+   ```
+   ![image](https://github.com/user-attachments/assets/853deec8-6e3d-4d84-846c-8b68371d1677)
+
+   ```bash
+   sudo /opt/splunkforwarder/bin/splunk list forward-server
+   ```
+   ![image](https://github.com/user-attachments/assets/c34e1944-f620-489d-a819-42c50a23d326)
+
+5. **Monitored the SSH log file on the target**  
+   ```bash
+   sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log
+   ```
+   ![image](https://github.com/user-attachments/assets/20538edc-9ed2-451b-bc43-30425a48039b)
+
+
+6. **Ran SSH brute-force attack against Metasploitable3**  
+   ![image](https://github.com/user-attachments/assets/37f3b4a3-81f4-479c-bdc2-920431dfde00)
+   ![image](https://github.com/user-attachments/assets/742fdcfa-fbdb-4e02-bad6-2c0081968c63)
+
+
+7. **Searched logs in Splunk**:  
+   - Open: `http://localhost:8000`
+   - Navigate to:
+     `Search & Reporting > Data Summary > Hosts > metasploitable3 > /var/log/auth.log`
+
+   Example search queries:
+   ```spl
+   index=* source="/var/log/auth.log" "Failed password"
+   ```
+   ![image](https://github.com/user-attachments/assets/82d8d7de-e0cd-417f-bca7-50f96eec3e06)
+
+   ```spl
+   index=* source="/var/log/auth.log" "Accepted password"
+   ```
+   ![image](https://github.com/user-attachments/assets/2343d678-1271-43bf-bb75-661b1d60aeda)
+
+    ```spl
+   attack visualization and analysis.
+   ```
+   ![image](https://github.com/user-attachments/assets/dfcaf9d3-e357-4906-a17b-5268429afffd)
 
 ---
 
-### Outcome
+### Outcome:
 
-- Splunk successfully collected logs from Metasploitable3.
-- SSH attack data was easy to identify.
-- Dashboards improved visibility and response.
+Splunk successfully ingested logs from Metasploitable3. SSH attack patterns such as failed and successful login attempts were clearly visible.
 
 ---
 
-### Conclusion
+### Conclusion:
 
-Using Splunk as a SIEM tool enabled us to:
-- Detect SSH brute-force attacks in real-time
-- Centralize and analyze logs effectively
-- Enhance incident response capabilities
-```
+This task demonstrated how Splunk can effectively:
 
----
+- Detect brute-force attacks through centralized logging.
+- Visualize authentication behavior in real-time.
 
-Would you like me to create a downloadable `.md` file version of this for convenience?
