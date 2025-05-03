@@ -29,13 +29,13 @@
 
 **Outcome:**
 Metasploit successfully logged into SSH using `vagrant:vagrant`.
-
+ ```bash
 Example output:
 [+] 192.168.8.169:22 - Success: 'vagrant:vagrant'
 [*] Command shell session 1 opened ...
 uid=900(vagrant) gid=900(vagrant) groups=900(vagrant),27(sudo)
 Linux metasploitable3-ub1404 3.13.0-170-generic ...
-
+````
 
 **Conclusion:**
 This task showed how weak/default credentials (`vagrant:vagrant`) allowed SSH access via Metasploit. It highlights the importance of:
@@ -74,12 +74,13 @@ This task showed how weak/default credentials (`vagrant:vagrant`) allowed SSH ac
 
 
 **Outcome:**
-The script found valid credentials `vagrant:vagrant` and confirmed access by running `whoami`.
+The script found valid credentials `vagrant:vagrant` and confirmed access 
 
-Example output:
+Example output:    
+````bash
 SUCCESS
 vagrant
-
+````
 
 **Conclusion:**
 This task demonstrated how automated scripts can exploit weak/default credentials. It reinforces the need to:
