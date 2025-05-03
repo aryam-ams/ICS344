@@ -23,28 +23,44 @@
 
 4. Configured parameters (IP, credentials).
    
-   ![image](https://github.com/user-attachments/assets/09971e66-7257-4d6b-92db-04d6475f058a)
+   ![image](https://github.com/user-attachments/assets/092bf293-432a-468d-a572-dd31f397a0c0)
+
+**Username file contents:**
+
+![image](https://github.com/user-attachments/assets/9ab13c9f-cd93-48f7-80ee-a6e508f6f233)
+
+**Password file contents:**
+
+![image](https://github.com/user-attachments/assets/70acf21b-11f1-459c-ad62-2eef24e09154)
+
 
 6. Ran the exploit.
+   This initiated a brute-force attempt across all username-password combinations from the provided files.
 
-   ![image](https://github.com/user-attachments/assets/b8f8be1e-904f-46bf-ba52-20db932c5565)
+  ![image](https://github.com/user-attachments/assets/4d28bbb6-a222-4c4a-8176-d437d95bde9c)
+
+Metasploit's scanner/ssh/ssh_login module works asynchronously and non-sequentially:
+ It tries multiple username/password combinations at the same time (parallel requests).
+As soon as it finds a valid credential, it reports success immediately (even if other attempts are still running).
+It does not wait for all failures to print before showing success. Instead, it prints results in the order responses arrive.
+ The login attempt for vagrant:vagrant simply completed faster than the others — that’s why success showed up first in output.
+Meanwhile, the failed attempts were either queued earlier but responded later.
 
 
 **Outcome:**
-Metasploit successfully logged into SSH using `vagrant:vagrant`.
-Example output:
- ```bash
+•	Metasploit successfully logged in to the SSH service using the credentials vagrant:vagrant.
+•	An SSH session was opened, confirming access to the system with a valid shell.
+•	The uid=900(vagrant) and system information were displayed, proving the attack succeeded.
 
-[+] 192.168.8.169:22 - Success: 'vagrant:vagrant'
-[*] Command shell session 1 opened ...
-uid=900(vagrant) gid=900(vagrant) groups=900(vagrant),27(sudo)
-Linux metasploitable3-ub1404 3.13.0-170-generic ...
-````
 
 **Conclusion:**
-This task showed how weak/default credentials (`vagrant:vagrant`) allowed SSH access via Metasploit. It highlights the importance of:
-- Changing default passwords.
-- Hardening SSH configurations.
+This task demonstrates that systems configured with weak or default SSH credentials are highly vulnerable to brute-force attacks. Using Metasploit's ssh_login module, I was able to automate credential discovery and gain unauthorized SSH access.
+
+This emphasizes the critical need for:
+•	Changing default credentials
+•	Implementing strong password policies
+•	Using SSH key-based authentication
+•	Applying account lockout mechanisms
 
 ---
 
