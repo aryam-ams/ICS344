@@ -44,7 +44,7 @@ Metasploit's scanner/ssh/ssh_login module works asynchronously and non-sequentia
 As soon as it finds a valid credential, it reports success immediately (even if other attempts are still running).
 It does not wait for all failures to print before showing success. Instead, it prints results in the order responses arrive.
  The login attempt for vagrant:vagrant simply completed faster than the others — that’s why success showed up first in output.
-Meanwhile, the failed attempts were either queued earlier but responded later. 
+Meanwhile, the failed attempts were queued earlier but responded later. 
 
 
 **Outcome:**
