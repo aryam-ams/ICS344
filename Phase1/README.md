@@ -17,11 +17,11 @@
    
    ![image](https://github.com/user-attachments/assets/0999886e-b5fd-42f2-b0ff-8038e7f52837)
 
-3. Used the `ssh_login` scanner module.
+2. Used the `ssh_login` scanner module.
    
    ![image](https://github.com/user-attachments/assets/76c344e4-3d93-4238-a44e-7ef86b5d34dc)
 
-4. Configured the Required Parameters.
+3. Configured the Required Parameters.
    
    ![image](https://github.com/user-attachments/assets/092bf293-432a-468d-a572-dd31f397a0c0)
 
@@ -34,7 +34,7 @@
 ![image](https://github.com/user-attachments/assets/70acf21b-11f1-459c-ad62-2eef24e09154)
 
 
-6. Ran the exploit.
+4. Ran the exploit.
    This initiated a brute-force attempt across all username-password combinations from the provided files.
 
   ![image](https://github.com/user-attachments/assets/4d28bbb6-a222-4c4a-8176-d437d95bde9c)
