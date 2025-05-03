@@ -14,23 +14,27 @@
 
 **Steps:**
 1. Launched Metasploit.
+   
    ![image](https://github.com/user-attachments/assets/0999886e-b5fd-42f2-b0ff-8038e7f52837)
 
-2. Used the `ssh_login` scanner module.
+3. Used the `ssh_login` scanner module.
+   
    ![image](https://github.com/user-attachments/assets/76c344e4-3d93-4238-a44e-7ef86b5d34dc)
 
-3. Configured parameters (IP, credentials).
+4. Configured parameters (IP, credentials).
+   
    ![image](https://github.com/user-attachments/assets/09971e66-7257-4d6b-92db-04d6475f058a)
 
-4. Ran the exploit.
+6. Ran the exploit.
 
    ![image](https://github.com/user-attachments/assets/b8f8be1e-904f-46bf-ba52-20db932c5565)
 
 
 **Outcome:**
 Metasploit successfully logged into SSH using `vagrant:vagrant`.
- ```bash
 Example output:
+ ```bash
+
 [+] 192.168.8.169:22 - Success: 'vagrant:vagrant'
 [*] Command shell session 1 opened ...
 uid=900(vagrant) gid=900(vagrant) groups=900(vagrant),27(sudo)
